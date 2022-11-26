@@ -15,9 +15,7 @@ def create_random_list(n, maxvalue):
     return res    
 
 def my_shuffle(in_list):
-    tmp_lst = []                        # создадим временный список, из которого будем постепенно удалять случайные элементы (создаем чтобы сохранить исходный список)
-    for i in in_list:                   # и заполним его элементами исходного списка
-        tmp_lst.append(i)
+    tmp_lst = list(in_list)                        # создадим временный список, из которого будем постепенно удалять случайные элементы (создаем чтобы сохранить исходный список)
     res = []
     while len(tmp_lst) != 0:                                # пока временный список не пуст
         ran_idx = random.randint(0, len(tmp_lst) - 1)       # берем случайный индекс 
@@ -34,6 +32,5 @@ while True:
         print("Видимо вы ошиблись. Нужно ввести целое число. Попробуйте еще раз...")
         
 in_list = create_random_list(n, maxvalue)
-shuffled_lst = my_shuffle(in_list)
-print('Исходный список: ', in_list)
-print('Перемешанный список: ', shuffled_lst)
+print('Исходный список: \t', in_list)
+print('Перемешанный список: \t', my_shuffle(in_list))
