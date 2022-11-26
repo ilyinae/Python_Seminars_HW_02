@@ -6,7 +6,7 @@
 # - 0.67 -> 13
 # - 198.45 -> 27
 
-a = 123456.123456 # отладочная строка
+#a = 123456.123456 # отладочная строка
 
 def count_of_decimaldigits(num):                                        # число введенных знаков после запятой - совсем без строковых функций
     point_idx = str(num).find('.')                                      # не получается в общем случае из за непредсказуемой работы с типом float:    
@@ -24,23 +24,18 @@ def int_digit_summ(x):                                                  # сум
     return (sum)
 
 def comma_shift(number):                                                # сдвиг запятой вправо до тех пор, пока число не станет целым
-    print('Исходное: ', number)
-#    while number != round(number):
-#    while number % 10:
     i = 0
     iter_cou = count_of_decimaldigits(number)
     while i <= iter_cou-1:
         number *= 10
         i += 1
-    print('Округлили: ', round(number))
     return (round(number))    
 
-# while True:
-#     try:
-#         a = float(input('Введите вещественное число:').replace(',','.'))  # если вместо точки ввели запятую - заменим
-#         break
-#     except ValueError:
-#         print("Видимо вы ошиблись. Нужно ввести число. Попробуйте еще раз...")
+while True:
+    try:
+        a = float(input('Введите вещественное число: ' ).replace(',','.'))  # если вместо точки ввели запятую - заменим
+        break
+    except ValueError:
+        print("Видимо вы ошиблись. Нужно ввести число. Попробуйте еще раз...")
 
-#print (f'Сумма чисел введенного числа равна {int_digit_summ(comma_shift(a))}')
-int_digit_summ(comma_shift(a))
+print (f'Сумма чисел введенного числа равна {int_digit_summ(comma_shift(a))}')

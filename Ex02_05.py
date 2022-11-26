@@ -25,7 +25,6 @@ def my_shuffle(in_list):
         tmp_lst.pop(ran_idx)                                # и удаляем его из временного списка
     return (res)    
 
-
 while True:
     try:
         n = int(input('Введите длину списка: '))
@@ -33,6 +32,7 @@ while True:
         break
     except ValueError:
         print("Видимо вы ошиблись. Нужно ввести целое число. Попробуйте еще раз...")
+        
 in_list = create_random_list(n, maxvalue)
 shuffled_lst = my_shuffle(in_list)
 print('Исходный список: ', in_list)
